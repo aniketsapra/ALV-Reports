@@ -61,8 +61,9 @@ TYPES: BEGIN OF ty_main_sum,
          bdmng TYPE bdmng,
        END OF ty_main_sum.
 
-DATA: it_main_sum TYPE SORTED TABLE OF ty_main_sum
+DATA: it_main_sum TYPE SORTED TABLE OF ty_main_sum        "It means: it_main_sum cannot contain two records having the same combination of WERKS + MATNR + BDTER.
                   WITH UNIQUE KEY werks matnr bdter.
+
 
 *&---------------------------------------------------------------------*
 *& Include          ZPP_RMPM_SHORTAGE_COL_SEL
